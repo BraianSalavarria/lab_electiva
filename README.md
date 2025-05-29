@@ -37,7 +37,7 @@ La **API RESTful para el Sistema de Punto de Venta** permite gestionar operacion
 
 - Python 3.11 o superior
 - Django 5.2 o superiror
-
+- Ngrok (para WebHooks)
 **Dependencias principales:**
 
 - Django 5.2  

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cobrar con QR - Venta {{ venta.uuid }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .qr-code {
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            background: white;
+        }
+        .total {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00a650;
+            margin: 20px 0;
+        }
+        .instructions {
+            color: #666;
+            margin: 15px 0;
+        }
+        .link-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #00a650;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💳 Pagar con MercadoPago</h1>
+        <div class="total">Total: ${{ venta.total }}</div>
+
+        <div class="qr-code">
+            <img src="data:image/png;base64,{{ qr_base64 }}" alt="Código QR para pagar" style="max-width: 100%;">
+        </div>
+
+        <div class="instructions">
+            <p><strong>Instrucciones:</strong></p>
+            <p>1. Abrí la app de MercadoPago</p>
+            <p>2. Tocá "Pagar con QR"</p>
+            <p>3. Escaneá este código</p>
+        </div>
+
+        <a href="{{ init_point }}" class="link-button" target="_blank">
+            O pagar desde el navegador
+        </a>
+
+        <div style="margin-top: 20px; font-size: 12px; color: #999;">
+            Venta ID: {{ venta.uuid }}
+        </div>
+    </div>
+</body>
+</html>

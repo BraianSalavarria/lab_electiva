@@ -4,6 +4,7 @@ from django.db.models import Sum, Count
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import status, filters
 from django.db import transaction
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 from apps.venta.api.filters import VentaFilter, RendicionDiariaFilter, PagoFilter
 from apps.venta.api.serializers import VentaSerializer, RendicionDiariaSerializer, PagoSerializer
@@ -24,6 +25,7 @@ class VentaViewSet(ModelViewSet):
     ordering = ['fecha']
     permission_classes = [StrictModelPermissions]
     lookup_field = 'uuid'
+
 
     @transaction.atomic
     def create(self, request, *args, **kwargs):

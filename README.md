@@ -19,7 +19,7 @@ La rama `tests` incluye:
 - **MercadoPago SDK 2.3.0**
 - **qrcode 8.2**
 - **django-filter 25.1**
-- Base de datos: PostgreSQL (`psycopg2-binary`)
+- Base de datos: SQLite
 
 ---
 
@@ -30,13 +30,14 @@ apps/
 ├── usuario/
 │   └── test/
 │       ├── fixture_user.py          # Fixtures de usuario y JWT
-│       └── test_auth.py             # Login, errores de autenticación
+│       └── test_token_jwt.py        # Test de JWT
 │
 ├── producto/
 │   └── test/
 │       ├── fixtures_categoria.py    # Fixtures de categorías
 │       ├── fixtures_producto.py     # Fixtures de productos
-│       └── test_producto.py         # CRUD, validaciones, filtros
+|       |__ test_categoria.py        # CRUD, validaciones, filtros
+│       └── test_producto.py        
 │
 ├── venta/
 │   └── test/

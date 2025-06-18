@@ -29,17 +29,18 @@ La rama `tests` incluye:
 apps/
 ├── usuario/
 │   └── test/
-│       ├── fixture_user.py          # Fixtures de usuario y JWT
-│       └── test_token_jwt.py        # Test de JWT
+│       ├── fixture_user.py           # Fixtures para usuarios y generación de tokens JWT
+│       └── test_token_jwt.py         # Tests relacionados con autenticación JWT
 │
 ├── producto/
 │   └── test/
-│       ├── fixtures_categoria.py    # Fixtures de categorías
-│       ├── fixtures_producto.py     # Fixtures de productos
-|       |__ test_categoria.py        # CRUD, validaciones, filtros
-│       └── test_producto.py        
+│       ├── fixtures_categoria.py     # Fixtures para categorías de productos
+│       ├── fixtures_producto.py      # Fixtures para productos
+│       ├── test_categoria.py         # Tests de CRUD, validaciones y filtros para categorías
+│       └── test_producto.py          # Tests de CRUD, validaciones y filtros para productos
 │
 ├── venta/
 │   └── test/
-│       ├── fixtures_venta.py        # Fixtures para ventas e items
-│       └── test_venta.py            # Reglas de stock, totales, filtros
+│       ├── fixtures_venta.py         # Fixtures para ventas e ítems de venta
+│       └── test_venta.py             # Tests de reglas de stock, totales y filtros en ventas
+
